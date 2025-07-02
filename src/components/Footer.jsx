@@ -2,11 +2,11 @@ import SocialLink from "./SocialLink";
 
 export default function Footer() {
     return (
-        <footer className="flex justify-between px-[7%] border-t-1 border-white/80 py-8 font-[Roboto]">
-            <p className="font-normal text-white text-sm">
+        <footer className="flex justify-between px-[7%] border-t-1 border-white/80 py-8 font-[Roboto] max-md:flex-col max-md:justify-center">
+            <p className="font-normal text-white text-sm max-md:mx-auto">
                 &copy; {new Date().getFullYear()}, Ikeoluwa Oyewole. All rights reserved.
             </p>
-            <div className="flex items-center">
+            <div className="flex items-center max-md:mx-auto max-md:mt-5 max-md:space-x-4">
                     <SocialLink
                       svg={
                         <svg

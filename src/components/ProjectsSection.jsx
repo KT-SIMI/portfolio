@@ -67,12 +67,12 @@ export default function Projects() {
   };
 
   return (
-    <main className="block pt-[100px] h-[auto] overflow-hidden pb-12">
+    <main className="block pt-[100px] h-[auto] overflow-hidden pb-12 max-md:pt-[70px]" id="projects">
       <h1 className="text-white font-medium font-[Roboto Serif] mb-[70px] mx-auto text-center text-3xl">
         Projects
       </h1>
       <div className="relative w-full flex flex-col items-center">
-        <div className="w-[80%] h-[60vh] relative flex justify-center items-center overflow-hidden">
+        <div className="w-[80%] h-[60vh] relative flex justify-center items-center overflow-hidden max-md:h-[48vh]">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={currentSlide}
@@ -92,23 +92,23 @@ export default function Projects() {
           </AnimatePresence>
         </div>
 
-        <div className="w-4/5 flex justify-center mt-5 space-x-3">
+        <div className="w-4/5 flex justify-center mt-5 space-x-3 max-md:space-x-2">
           {projects.map((_, index) => (
             <span
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-5 h-5 rounded-full cursor-pointer ${
+              className={`w-5 h-5 rounded-full cursor-pointer max-md:w-3.5 max-md:h-3.5 ${
                 index === currentSlide ? "bg-white" : "bg-white/40"
               }`}
             ></span>
           ))}
         </div>
-        <div className="w-1/2 flex mt-5 justify-between items-center font-[Roboto Serif]">
+        <div className="w-1/2 flex mt-5 justify-between items-center font-[Roboto Serif] max-md:w-4/5">
           <div className="flex space-x-2">
             <button
               onClick={prevSlide}
               disabled={currentSlide === 0}
-              className={`bg-white/85 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold ${
+              className={`bg-white/85 rounded-full w-6 h-6 max-md:w-5 max-md:h-5 max-md:text-xs flex items-center justify-center text-sm font-bold ${
                 currentSlide === 0
                   ? "opacity-50 cursor-not-allowed"
                   : "hover:bg-white"
@@ -119,7 +119,7 @@ export default function Projects() {
             <button
               onClick={nextSlide}
               disabled={currentSlide === totalSlides - 1}
-              className={`bg-white/85 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold ${
+              className={`bg-white/85 rounded-full w-6 h-6 max-md:w-5 max-md:h-5 max-md:text-xs flex items-center justify-center text-sm font-bold ${
                 currentSlide === totalSlides - 1
                   ? "opacity-50 cursor-not-allowed"
                   : "hover:bg-white"
@@ -128,7 +128,7 @@ export default function Projects() {
               &gt;
             </button>
           </div>
-          <span className="font-bold text-base text-white">
+          <span className="font-bold text-base max-md:text-sm text-white">
             {currentSlide + 1}/{totalSlides}
           </span>
         </div>

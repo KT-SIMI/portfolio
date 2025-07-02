@@ -3,7 +3,7 @@ import SocialLink from "./SocialLink";
 export default function Navbar() {
   return (
     <div className="flex justify-between h-[70px] w-full m-0 px-[5%]">
-      <h1 className="text-white text-2xl font-[Roboto Serif] font-semibold my-auto">
+      <h1 className="text-white text-2xl max-md:text-lg max-md:font-normal font-[Roboto Serif] font-semibold my-auto">
         Ikeoluwa Oyewole
       </h1>
       <div className="flex items-center">
@@ -11,8 +11,6 @@ export default function Navbar() {
           svg={
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
               fill="#fff"
               class="bi bi-github"
               viewBox="0 0 16 16"
@@ -21,13 +19,12 @@ export default function Navbar() {
             </svg>
           }
           link={"https://github.com/KT-SIMI"}
+          className="w-4 h-4 max-md:w-3 max-md:h-3"
         />
         <SocialLink
           svg={
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
               fill="#fff"
               class="bi bi-linkedin"
               viewBox="0 0 16 16"
@@ -36,12 +33,11 @@ export default function Navbar() {
             </svg>
           }
           link={"/"}
+          className="w-4 h-4 max-md:w-3 max-md:h-3"
         />
         <SocialLink
           svg={
             <svg
-              width="14"
-              height="14"
               viewBox="0 0 14 14"
               fill="#fff"
               xmlns="http://www.w3.org/2000/svg"
@@ -53,6 +49,7 @@ export default function Navbar() {
             </svg>
           }
           link={"/"}
+          className="w-4 h-4 max-md:w-3 max-md:h-3"
         />
       </div>
     </div>

@@ -48,3 +48,21 @@ body {
 .contact-link .svg {
     margin-left: 5px;
 }
+
+@media (max-width: 768px) {
+    .section::before {
+        display: none;
+    }
+
+    .column::before {
+        display: none;
+    }
+    /* .dot.active {
+        width: 0.5rem; 
+        height: 0.5rem; 
+    }
+    .dot:not(.active) {
+        width: 0.4rem; 
+        height: 0.4rem; 
+    } */
+}

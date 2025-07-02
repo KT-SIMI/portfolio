@@ -31,25 +31,25 @@ export default function Contact() {
   }
 
   return (
-    <main className="block pt-[100px] h-auto pb-12">
+    <main className="block pt-[100px] h-auto pb-12 max-md:pt-[50px]">
       <h1 className="text-white font-medium font-[Roboto Serif] mb-[100px] mx-auto text-center text-3xl">
         Contact
       </h1>
-      <div className="grid mx-auto w-[90vw] grid-cols-2">
-        <div className="flex flex-col text-white text-left space-y-2 px-[10%] py-5">
-          <h3 className="font-semibold font-[Roboto Serif] text-3xl">
+      <div className="grid mx-auto w-[90vw] grid-cols-2 max-md:flex max-md:flex-col max-md:space-y-5">
+        <div className="flex flex-col text-white text-left space-y-2 px-[10%] py-5 max-md:py-0 max-md:text-center">
+          <h3 className="font-semibold font-[Roboto Serif] text-3xl max-md:text-xl">
             Got a project in mind?
           </h3>
-          <h1 className="font-semibold font-[Roboto Serif] text-5xl/[60px]">
+          <h1 className="font-semibold font-[Roboto Serif] text-5xl/[60px] max-md:text-2xl">
             Let's talk
           </h1>
-          <span className="block bg-white w-1/5 h-[1px] mb-5"></span>
-          <p className="font-normal text-lg font-[Roboto] opacity-55">
+          <span className="block bg-white w-1/5 h-[1px] mb-5 max-md:w-full max-md:mt-3"></span>
+          <p className="font-normal text-lg font-[Roboto] opacity-55 max-md:opacity-80 max-md:text-base">
             Lorem ipsum dolor sit amet consectetur. Ipsum dui integer nunc
             venenatis nec ut mattis tincidunt at. Ac platea nisi risus ante
             fames est a tellus urna.
           </p>
-          <a href="/" className="contact-link font-normal flex space-x-2 font-[Roboto] text-base mb-4 hover:text-blue-400 hover:underline">
+          <a href="/" className="contact-link font-normal max-md:mx-auto max-md:text-sm flex space-x-2 font-[Roboto] text-base mb-4 hover:text-blue-400 hover:underline">
             <svg
               width="16"
               height="16"
@@ -64,7 +64,7 @@ export default function Contact() {
             </svg>
            <span> uthmanoyewole95@gmail.com</span>
           </a>
-          <a href="/" className="contact-link font-normal flex space-x-2 font-[Roboto] text-base hover:text-blue-400 hover:underline">
+          <a href="/" className="contact-link font-normal max-md:mx-auto max-md:text-sm flex space-x-2 font-[Roboto] text-base hover:text-blue-400 hover:underline">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -78,7 +78,7 @@ export default function Contact() {
            <span>+234 812 176 2229</span>
           </a>
         </div>
-        <form action="" className="flex flex-col space-y-5 border border-l-white/40 px-[10%] py-5">
+        <form action="" className="flex flex-col space-y-5 border border-l-white/40 px-[10%] py-5 max-md:mt-8 max-md:border-0 max-md:space-y-3">
           <Input
             type={"name"}
             placeholder={"Name"}
@@ -94,8 +94,8 @@ export default function Contact() {
             placeholder={"Subject"}
             onChange={handleChange}
           />
-          <textarea name="message" placeholder="Message" id="" className="w-full h-[140px] px-5 py-3 bg-transparent border-1 rounded-[20px] border-white/40 text-white focus:outline-none focus:border-blue-400 transition-colors duration-300 placeholder:text-white/35"></textarea>
-          <button type="submit" onClick={handleSubmit} className="w-full h-[70px] px-5 py-3 bg-blue-400 rounded-[20px] hover:bg-[#3DBEFF] transition-colors duration-500 text-white font-[Roboto]">
+          <textarea name="message" placeholder="Message" id="" className="w-full h-[140px] max-md:h-[120px] max-md:rounded-[12px] px-5 py-3 bg-transparent border-1 rounded-[20px] border-white/40 text-white focus:outline-none focus:border-blue-400 transition-colors duration-300 placeholder:text-white/35"></textarea>
+          <button type="submit" onClick={handleSubmit} className="w-full h-[70px] max-md:h-[60px] max-md:rounded-[12px] px-5 py-3 bg-blue-400 rounded-[20px] hover:bg-[#3DBEFF] transition-colors duration-500 text-white font-[Roboto]">
             Submit now
           </button>
         </form>

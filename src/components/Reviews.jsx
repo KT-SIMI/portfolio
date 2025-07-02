@@ -52,7 +52,7 @@ export default function Reviews() {
   }, [currentSlide]);
 
   return (
-    <main className="block pt-[120px] h-auto overflow-hidden pb-12">
+    <main className="block pt-[120px] h-auto overflow-hidden pb-12 max-md:pt-[70px]">
       <h1 className="text-white font-medium font-[Roboto Serif] mb-[70px] mx-auto text-center text-3xl">
         Reviews
       </h1>
@@ -73,7 +73,7 @@ export default function Reviews() {
           </AnimatePresence>
         </div>
 
-        <div className="w-4/5 flex justify-center mt-5 space-x-2">
+        <div className="w-4/5 flex justify-center mt-5 max-md:mt-0 space-x-2">
           {reviews.map((_, index) => (
             <span
               key={index}

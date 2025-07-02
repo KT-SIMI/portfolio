@@ -2,12 +2,12 @@ import AboutCard from "./AboutCard";
 
 export default function () {
   return (
-    <main className="block pt-[120px] h-[80vh]">
+    <main className="block pt-[120px] h-[80vh] max-md:h-auto max-md:pt-[100px]">
         <h1 className="text-white font-medium font-[Roboto Serif] mb-[70px] mx-auto text-center text-3xl">
             About
         </h1>
-    <div className="flex justify-center gap-[100px] relative text-white">
-      <div className="column w-[400px] relative pl-5 pt-5 pb-0">
+    <div className="flex justify-center gap-[100px] relative text-white max-md:flex-col max-md:gap-0">
+      <div className="column w-[400px] relative pl-5 pt-5 pb-0 max-md:w-full max-md:p-0">
         <AboutCard
           head={"Hi, I am Ikeoluwa"}
           text={
@@ -27,7 +27,7 @@ export default function () {
           }
         />
       </div>
-      <div className="column w-[400px] relative pl-5 pt-5 pb-0">
+      <div className="column w-[400px] relative pl-5 pt-5 pb-0 max-md:w-full max-md:p-0">
         <AboutCard
           head={"Frontend Development"}
           text={

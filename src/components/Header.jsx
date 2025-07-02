@@ -8,15 +8,15 @@ export default function Header() {
       style={{ backgroundImage: `url(${HeaderImage})` }}
     >
       <Navbar />
-      <div className="block mt-[20%] w-full">
-        <div className="w-[55%] px-[5%] py-[2%] text-white">
-          <h3 className="font-medium font-[Monserrat] text-[21px]">
+      <div className="block mt-[20%] max-md:mt-[60%] w-full max-md:text-center">
+        <div className="w-[55%] max-md:w-full px-[5%] py-[2%] text-white">
+          <h3 className="font-medium font-[Monserrat] text-[21px] max-md:text-[18px]">
             Build with Ikeoluwa Oyewole
           </h3>
-          <h1 className="text-[40px] font-[Roboto Serif] font-bold text-white mb-4">
+          <h1 className="text-[40px] font-[Roboto Serif] font-bold text-white mb-4 max-md:text-[32px]">
             Software Engineer
           </h1>
-          <p className="font-normal font-[Monserrat] text-[15px] mb-[35px] w-[85%] opacity-60">
+          <p className="font-normal font-[Monserrat] text-[15px] mb-[35px] w-[85%] opacity-60 max-md:w-full max-md:px-[4%] max-md:opacity-75">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
             elementum elementum mattis. Curabitur tellus dolor, pharetra sed
             justo sit amet, eleifend pretium turpis. Aliquam a enim vel lectus
