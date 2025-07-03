@@ -1,6 +1,23 @@
 import { useState } from "react";
 import Input from "./Input";
 
+const generateMailLink = (
+  { name, email, subject, message },
+  useGmail = false
+) => {
+  const formattedBody = `Hi,\n\n${message}\n\nBest regards,\n${name}\n(${email})`;
+
+  if (useGmail) {
+    return `https://mail.google.com/mail/?view=cm&to=uthmanoyewole95@gmail.com&su=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(formattedBody)}`;
+  }
+
+  return `mailto:uthmanoyewole95@gmail.com?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(formattedBody)}`;
+};
+
 export default function Contact() {
   const [body, setBody] = useState({
     name: "",
@@ -18,17 +35,23 @@ export default function Contact() {
   };
 
   const handleSubmit = (e) => {
+    console.log("Form submitted with data:", body);
     e.preventDefault();
-    // Here you can handle the form submission, e.g., send the data to a server
-    console.log("Form submitted:", body);
-    // Reset the form after submission
+    const { name, email, subject, message } = body;
+
+    if (!name || !email || !subject || !message) {
+      alert("Please fill all fields.");
+      return;
+    }
+
+    window.open(generateMailLink(body, true), "_blank");
     setBody({
       name: "",
       email: "",
       subject: "",
       message: "",
     });
-  }
+  };
 
   return (
     <main className="block pt-[100px] h-auto pb-12 max-md:pt-[50px]">
@@ -49,7 +72,10 @@ export default function Contact() {
             venenatis nec ut mattis tincidunt at. Ac platea nisi risus ante
             fames est a tellus urna.
           </p>
-          <a href="/" className="contact-link font-normal max-md:mx-auto max-md:text-sm flex space-x-2 font-[Roboto] text-base mb-4 hover:text-blue-400 hover:underline">
+          <a
+            href="/"
+            className="contact-link font-normal max-md:mx-auto max-md:text-sm flex space-x-2 font-[Roboto] text-base mb-4 hover:text-blue-400 hover:underline"
+          >
             <svg
               width="16"
               height="16"
@@ -62,9 +88,12 @@ export default function Contact() {
                 fill="white"
               />
             </svg>
-           <span> uthmanoyewole95@gmail.com</span>
+            <span> uthmanoyewole95@gmail.com</span>
           </a>
-          <a href="/" className="contact-link font-normal max-md:mx-auto max-md:text-sm flex space-x-2 font-[Roboto] text-base hover:text-blue-400 hover:underline">
+          <a
+            href="/"
+            className="contact-link font-normal max-md:mx-auto max-md:text-sm flex space-x-2 font-[Roboto] text-base hover:text-blue-400 hover:underline"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -75,27 +104,47 @@ export default function Contact() {
             >
               <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
             </svg>{" "}
-           <span>+234 812 176 2229</span>
+            <span>+234 812 176 2229</span>
           </a>
         </div>
-        <form action="" className="flex flex-col space-y-5 border border-l-white/40 px-[10%] py-5 max-md:mt-8 max-md:border-0 max-md:space-y-3">
+        <form
+          action=""
+          className="flex flex-col space-y-5 border border-l-white/40 px-[10%] py-5 max-md:mt-8 max-md:border-0 max-md:space-y-3"
+        >
           <Input
             type={"name"}
             placeholder={"Name"}
+            name={"name"}
+            value={body.name}
             onChange={handleChange}
           />
           <Input
             type={"email"}
             placeholder={"Email"}
+            name={"email"}
+            value={body.email}
             onChange={handleChange}
           />
           <Input
             type={"subject"}
             placeholder={"Subject"}
+            name={"subject"}
+            value={body.subject}
             onChange={handleChange}
           />
-          <textarea name="message" placeholder="Message" id="" className="w-full h-[140px] max-md:h-[120px] max-md:rounded-[12px] px-5 py-3 bg-transparent border-1 rounded-[20px] border-white/40 text-white focus:outline-none focus:border-blue-400 transition-colors duration-300 placeholder:text-white/35"></textarea>
-          <button type="submit" onClick={handleSubmit} className="w-full h-[70px] max-md:h-[60px] max-md:rounded-[12px] px-5 py-3 bg-blue-400 rounded-[20px] hover:bg-[#3DBEFF] transition-colors duration-500 text-white font-[Roboto]">
+          <textarea
+            name="message"
+            placeholder="Message"
+            onChange={handleChange}
+            value={body.message}
+            className="w-full h-[140px] max-md:h-[120px] max-md:rounded-[12px] px-5 py-3 bg-transparent border-1 rounded-[20px] border-white/40 text-white focus:outline-none focus:border-blue-400 transition-colors duration-300 placeholder:text-white/35"
+            required
+          ></textarea>
+          <button
+            type="submit"
+            onClick={handleSubmit}
+            className="w-full h-[70px] max-md:h-[60px] max-md:rounded-[12px] px-5 py-3 bg-blue-400 rounded-[20px] hover:bg-[#3DBEFF] transition-colors duration-500 text-white font-[Roboto]"
+          >
             Submit now
           </button>
         </form>
