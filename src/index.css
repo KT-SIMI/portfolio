@@ -1,9 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
 @import "tailwindcss";
 
-body {
-   background: linear-gradient(180deg, rgba(2, 13, 15, 0) 14.01%, #020D0F 16.34%);
+:root {
+    --bg-main: #000F10;
+    --bg-alt1: #001213;
+    --bg-alt2: #00191B;
+    --bg-feature: #113B3C;
+    --bg-panel: #001718;
+    --border: #101E1C;
+
+    --text-body: #E1F5F4;
+    --text-heading: #21EAE0;
+    --cta: #3DDDD8;
+    --hover: #00CFC9;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    /* background: linear-gradient(180deg, rgba(2, 13, 15, 0) 14.01%, #020D0F 16.34%); */
+    background-color: var(--bg-main);
+    /* color: var(--text-body); */
+}
+
+main:nth-child(even) {
+    background-color: var(--bg-alt1);
+}
+
+main:nth-child(odd) {
+    background-color: var(--bg-alt2)
+}
+
+a,
+h1,
+h2,
+h3 {
+    /* fill: var(--text-heading); */
+    color: var(--text-heading);
+}
+
+a:hover, svg:hover {
+    fill: var(--hover);
+    color: var(--hover);
+    opacity: 0.6
+}
+
 
 .column::before {
     content: "";
@@ -34,14 +78,14 @@ body {
 }
 
 .dot.active {
-    width: 0.75rem; 
-    height: 0.75rem; 
-    background-color: #ffffff; 
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: #ffffff;
 }
 
 .dot:not(.active) {
-    width: 0.5rem; 
-    height: 0.5rem; 
+    width: 0.5rem;
+    height: 0.5rem;
     background-color: #a0aec0;
 }
 
@@ -57,6 +101,7 @@ body {
     .column::before {
         display: none;
     }
+
     /* .dot.active {
         width: 0.5rem; 
         height: 0.5rem; 

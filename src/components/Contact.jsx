@@ -80,12 +80,11 @@ export default function Contact() {
               width="16"
               height="16"
               viewBox="0 0 14 14"
-              fill="#fff"
+              fill="#21EAE0"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M14 2.62512V11.3751C14 11.8717 13.6216 12.2501 13.125 12.2501H12.25V4.30906L7 8.08031L1.75 4.30906V12.2501H0.875C0.378438 12.2501 0 11.8717 0 11.3751V2.62512C0 2.37662 0.093625 2.15787 0.250688 2.00299C0.332443 1.92109 0.429856 1.85649 0.537117 1.81304C0.644378 1.7696 0.75929 1.7482 0.875 1.75012H1.16681L7 5.97943L12.8332 1.75012H13.125C13.3735 1.75012 13.5922 1.84374 13.7493 2.00299C13.9064 2.15787 14 2.37662 14 2.62512Z"
-                fill="white"
               />
             </svg>
             <span> uthmanoyewole95@gmail.com</span>
@@ -98,7 +97,7 @@ export default function Contact() {
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
-              fill="#fff"
+              fill="#21EAE0"
               class="bi bi-whatsapp"
               viewBox="0 0 16 16"
             >
