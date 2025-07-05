@@ -6,6 +6,7 @@ import projectImage2 from "../assets/image-project2.png";
 import projectImage3 from "../assets/image-project3.png";
 import projectImage4 from "../assets/image-project4.png";
 import projectImage5 from "../assets/image-project5.png";
+import HorizontalScroll from "./HorizontalScroll";
 
 const projects = [
   {
@@ -71,7 +72,7 @@ export default function Projects() {
       <h1 className="text-white font-medium font-[Roboto Serif] mb-[70px] mx-auto text-center text-3xl">
         Projects
       </h1>
-      <div className="relative w-full flex flex-col items-center">
+      <div className="relative w-full hidden md:flex flex-col items-center">
         <div className="w-[80%] h-[60vh] relative flex justify-center items-center overflow-hidden max-md:h-[48vh]">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
@@ -132,6 +133,9 @@ export default function Projects() {
             {currentSlide + 1}/{totalSlides}
           </span>
         </div>
+      </div>
+      <div className="w-full h-auto md:hidden pb-5">
+              <HorizontalScroll projects={projects} />
       </div>
     </main>
   );

@@ -1,11 +1,15 @@
 import HeaderImage from "../assets/image-header.png";
+import mobileHeaderImage from "../assets/image-mobile-header.png";
 import Navbar from "./Navbar";
 
 export default function Header() {
   return (
     <div
       className="block bg-no-repeat bg-center bg-cover w-full max-w-[100vw] h-[100vh] p-0"
-      style={{ backgroundImage: `url(${HeaderImage})` }}
+      style={{
+        backgroundImage: `url(${HeaderImage})`,
+      }}
+      id="header"
     >
       <Navbar />
       <div className="block mt-[20%] max-md:mt-[60%] w-full max-md:text-center">

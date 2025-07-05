@@ -93,6 +93,15 @@ a:hover, svg:hover {
     margin-left: 5px;
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
 @media (max-width: 768px) {
     .section::before {
         display: none;
@@ -101,6 +110,11 @@ a:hover, svg:hover {
     .column::before {
         display: none;
     }
+
+    /* #header {
+        background-image: url('./assets/image-mobile-header.png') !important;
+
+    } */
 
     /* .dot.active {
         width: 0.5rem; 
