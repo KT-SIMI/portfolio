@@ -52,7 +52,7 @@ export default function Reviews() {
   }, [currentSlide]);
 
   return (
-    <main className="block pt-[120px] h-auto overflow-hidden pb-12 max-md:pt-[70px]">
+    <main className="block pt-[120px] h-auto overflow-hidden pb-12 max-md:pt-[70px]" id="reviews">
       <h1 className="text-white font-medium font-[Roboto Serif] mb-[70px] mx-auto text-center text-3xl">
         Reviews
       </h1>

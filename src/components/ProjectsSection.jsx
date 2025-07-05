@@ -6,7 +6,6 @@ import projectImage2 from "../assets/image-project2.png";
 import projectImage3 from "../assets/image-project3.png";
 import projectImage4 from "../assets/image-project4.png";
 import projectImage5 from "../assets/image-project5.png";
-import HorizontalScroll from "./HorizontalScroll";
 
 const projects = [
   {
@@ -68,7 +67,10 @@ export default function Projects() {
   };
 
   return (
-    <main className="block pt-[100px] h-[auto] overflow-hidden pb-12 max-md:pt-[70px]" id="projects">
+    <main
+      className="block pt-[100px] h-[auto] overflow-hidden pb-12 max-md:pt-[70px]"
+      id="projects"
+    >
       <h1 className="text-white font-medium font-[Roboto Serif] mb-[70px] mx-auto text-center text-3xl">
         Projects
       </h1>
@@ -98,7 +100,7 @@ export default function Projects() {
             <span
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-5 h-5 rounded-full cursor-pointer max-md:w-3.5 max-md:h-3.5 ${
+              className={`w-5 h-5 rounded-full cursor-pointer ${
                 index === currentSlide ? "bg-white" : "bg-white/40"
               }`}
             ></span>
@@ -134,8 +136,43 @@ export default function Projects() {
           </span>
         </div>
       </div>
-      <div className="w-full h-auto md:hidden pb-5">
-              <HorizontalScroll projects={projects} />
+      <div className="flex w-full relative flex-col items-center h-auto md:hidden pb-5">
+        <div className="w-[80%] h-[48vh] relative flex justify-center items-center overflow-hidden">
+          <motion.div
+            key={currentSlide}
+            className="absolute w-full h-full"
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            onDragEnd={(event, info) => {
+              if (info.offset.x < -100) {
+                nextSlide();
+              } else if (info.offset.x > 100) {
+                prevSlide();
+              }
+            }}
+            initial={{ x: 0 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Project
+              {...projects[currentSlide]}
+              step={currentSlide}
+              totalSteps={totalSlides}
+            />
+          </motion.div>
+        </div>
+
+          <div className="w-4/5 flex justify-center mt-5 space-x-2">
+          {projects.map((_, index) => (
+            <span
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-3.5 h-3.5 rounded-full cursor-pointer ${
+                index === currentSlide ? "bg-white" : "bg-white/40"
+              }`}
+            ></span>
+          ))}
+        </div>
       </div>
     </main>
   );
