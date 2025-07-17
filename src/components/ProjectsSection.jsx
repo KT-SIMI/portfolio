@@ -68,10 +68,10 @@ export default function Projects() {
 
   return (
     <main
-      className="block pt-[100px] h-[auto] overflow-hidden pb-12 max-md:pt-[70px]"
+      className="block pt-[100px] h-[auto] overflow-hidden pb-12 max-md:pt-[60px]"
       id="projects"
     >
-      <h1 className="text-white font-medium font-[Roboto Serif] mb-[70px] mx-auto text-center text-3xl">
+      <h1 className="text-white font-medium font-[Roboto Serif] mb-[70px] max-md:mb-[50px] mx-auto text-center text-3xl">
         Projects
       </h1>
       <div className="relative w-full hidden md:flex flex-col items-center">
@@ -137,7 +137,7 @@ export default function Projects() {
         </div>
       </div>
       <div className="flex w-full relative flex-col items-center h-auto md:hidden pb-5">
-        <div className="w-[80%] h-[48vh] relative flex justify-center items-center overflow-hidden">
+        <div className="w-[80%] h-[400px] relative flex justify-center items-center overflow-hidden">
           <motion.div
             key={currentSlide}
             className="absolute w-full h-full"
@@ -167,7 +167,7 @@ export default function Projects() {
             <span
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3.5 h-3.5 rounded-full cursor-pointer ${
+              className={`w-3 h-3 max-md:w-2.5 max-md:h-2.5 rounded-full cursor-pointer ${
                 index === currentSlide ? "bg-white" : "bg-white/40"
               }`}
             ></span>

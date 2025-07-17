@@ -55,7 +55,7 @@ export default function Contact() {
 
   return (
     <main className="block pt-[100px] h-auto pb-12 max-md:pt-[50px]">
-      <h1 className="text-white font-medium font-[Roboto Serif] mb-[100px] mx-auto text-center text-3xl">
+      <h1 className="text-white font-medium font-[Roboto Serif] mb-[100px] max-md:mb-[40px] mx-auto text-center text-3xl">
         Contact
       </h1>
       <div className="grid mx-auto w-[90vw] grid-cols-2 max-md:flex max-md:flex-col max-md:space-y-5">
@@ -67,10 +67,8 @@ export default function Contact() {
             Let's talk
           </h1>
           <span className="block bg-white w-1/5 h-[1px] mb-5 max-md:w-full max-md:mt-3"></span>
-          <p className="font-normal text-lg font-[Roboto] opacity-55 max-md:opacity-80 max-md:text-base">
-            Lorem ipsum dolor sit amet consectetur. Ipsum dui integer nunc
-            venenatis nec ut mattis tincidunt at. Ac platea nisi risus ante
-            fames est a tellus urna.
+          <p className="font-normal text-lg pb-2 font-[Roboto] opacity-55 max-md:opacity-80 max-md:text-base">
+            I am always interested to discuss new opportunities and interesting projects. Whether you're a startup, an established company, or a fellow developer, I'd love to hear from you
           </p>
           <a
             href="/"
@@ -108,7 +106,7 @@ export default function Contact() {
         </div>
         <form
           action=""
-          className="flex flex-col space-y-5 border border-l-white/40 px-[10%] py-5 max-md:mt-8 max-md:border-0 max-md:space-y-3"
+          className="flex flex-col space-y-5 border border-l-white/40 px-[10%] pb-3 max-md:mt-8 max-md:border-0 max-md:space-y-3"
         >
           <Input
             type={"name"}

@@ -12,7 +12,7 @@ export default function Header() {
       id="header"
     >
       <Navbar />
-      <div className="block mt-[20%] max-md:mt-[60%] w-full max-md:text-center">
+      <div className="block mt-[20%] max-md:mt-[63%] w-full max-md:text-center">
         <div className="w-[55%] max-md:w-full px-[5%] py-[2%] text-white">
           <h3 className="font-medium font-[Monserrat] text-[21px] max-md:text-[18px]">
             Build with Ikeoluwa Oyewole
@@ -21,12 +21,7 @@ export default function Header() {
             Software Engineer
           </h1>
           <p className="font-normal font-[Monserrat] text-[15px] mb-[35px] w-[85%] opacity-60 max-md:w-full max-md:px-[4%] max-md:opacity-75">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-            elementum elementum mattis. Curabitur tellus dolor, pharetra sed
-            justo sit amet, eleifend pretium turpis. Aliquam a enim vel lectus
-            cursus vehicula pulvinar sed purus. Quisque vulputate in quam in
-            fermentum. Nulla sed urna eget orci elementum dapibus id nec mi.
-            Aliquam a risus lectus
+            Hi, I am Ikeoluwa Oyewole, a software engineer who transforms complex business challenges into elegant digital solutions. Over the past 2 years, I've helped startups and established companies increase their operational efficiency through custom web applications and automated systems.
           </p>
           <a
             href="#projects"
