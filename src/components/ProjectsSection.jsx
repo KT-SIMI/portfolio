@@ -10,34 +10,34 @@ import projectImage5 from "../assets/image-project5.png";
 const projects = [
   {
     imageURL: projectImage1,
-    head: "Project One",
-    text: "Lorem ipsum dolor sit amet consectetur. Viverra sapien sagittis eget elementum pretium magna nisi auctor cursu.",
-    link: "#",
+    head: "Birthday Buddy",
+    text: "Birthday Buddy is a birthday reminder platform that allows users send a personal heartfelt messages to their friends.",
+    link: "https://birthday-reminder-client.vercel.app",
   },
   {
     imageURL: projectImage2,
-    head: "Project Two",
-    text: "Lorem ipsum dolor sit amet consectetur. Viverra sapien sagittis eget elementum pretium magna nisi auctor cursu.",
-    link: "#",
+    head: "Todo App",
+    text: "A Basic Todo App, for adding Tasks, deleting and tracking completions.",
+    link: "https://to-do-p4m1.onrender.com/",
   },
   {
     imageURL: projectImage3,
-    head: "Project Three",
-    text: "Lorem ipsum dolor sit amet consectetur. Viverra sapien sagittis eget elementum pretium magna nisi auctor cursu.",
-    link: "#",
+    head: "Blog App",
+    text: "A basic blog app, in which a user can write, read, edit and delete blogs.",
+    link: "https://blog-app-93mw.onrender.com/",
   },
   {
     imageURL: projectImage4,
-    head: "Project Four",
-    text: "Lorem ipsum dolor sit amet consectetur. Viverra sapien sagittis eget elementum pretium magna nisi auctor cursu.",
-    link: "#",
+    head: "Early Birds SignUp",
+    text: "An ahead of the curve SignUp page built with HTML, CSS and JS",
+    link: "https://kt-simi.github.io/signup/",
   },
-  {
-    imageURL: projectImage5,
-    head: "Project Five",
-    text: "Lorem ipsum dolor sit amet consectetur. Viverra sapien sagittis eget elementum pretium magna nisi auctor cursu.",
-    link: "#",
-  },
+  // {
+  //   imageURL: projectImage5,
+  //   head: "Project Five",
+  //   text: "Lorem ipsum dolor sit amet consectetur. Viverra sapien sagittis eget elementum pretium magna nisi auctor cursu.",
+  //   link: "#",
+  // },
 ];
 
 export default function Projects() {
@@ -68,7 +68,7 @@ export default function Projects() {
 
   return (
     <main
-      className="block pt-[100px] h-[auto] overflow-hidden pb-12 max-md:pt-[60px]"
+      className="block pt-[80px] h-[auto] overflow-hidden pb-12 max-md:pt-[60px]"
       id="projects"
     >
       <h1 className="text-white font-medium font-[Roboto Serif] mb-[70px] max-md:mb-[50px] mx-auto text-center text-3xl">
@@ -95,18 +95,18 @@ export default function Projects() {
           </AnimatePresence>
         </div>
 
-        <div className="w-4/5 flex justify-center mt-5 space-x-3 max-md:space-x-2">
+        <div className="w-4/5 flex justify-center space-x-3 max-md:space-x-2">
           {projects.map((_, index) => (
             <span
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-5 h-5 rounded-full cursor-pointer ${
+              className={`w-4 h-4 rounded-full cursor-pointer ${
                 index === currentSlide ? "bg-white" : "bg-white/40"
               }`}
             ></span>
           ))}
         </div>
-        <div className="w-1/2 flex mt-5 justify-between items-center font-[Roboto Serif] max-md:w-4/5">
+        <div className="w-2/5 flex mt-5 justify-between items-center font-[Roboto Serif] max-md:w-4/5">
           <div className="flex space-x-2">
             <button
               onClick={prevSlide}

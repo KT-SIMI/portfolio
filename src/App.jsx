@@ -9,8 +9,13 @@ import Reviews from "./components/Reviews";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ErrorBoundary from "../utils/ErrorBoundary";
+import { usePageReady } from "../utils/PageReady";
+import Loading from "./components/Loading";
 
 function App() {
+  const pageReady = usePageReady()
+
+  if (!pageReady) return <Loading />
   return (
     <ErrorBoundary>
      <Header />

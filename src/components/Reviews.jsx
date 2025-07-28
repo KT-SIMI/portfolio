@@ -7,22 +7,22 @@ import Review from "./Review";
 
 const reviews = [
   {
-    text: "Working with Ike has been an absolute pleasure and we'll definitely turn to his expertise for new projects.",
-    imageURL: profileImage1,
-    name: "James Wittings",
-    position: "Marketing Director at Amazon",
-  },
-  {
-    text: "Coding with Ike has been an absolute pleasure and we'll definitely turn to his expertise for new projects.",
+    text: "Working with Ikeoluwa has been an absolute pleasure and we'll definitely turn to his expertise for new projects. He excels at taking responsibilities and finding creative solutions.",
     imageURL: profileImage2,
-    name: "John Von Neumann",
-    position: "Chief Technology Officer at Google",
+    name: "Adesola Mohiro",
+    position: "CEO, Roware",
   },
   {
-    text: "Vibe coding with Ike has been an absolute pleasure and we'll definitely turn to his expertise for new projects.",
+    text: "Ikeoluwa excels at finding solutions. He is proactive and looks to take responsibility to make his colleagues jobs much easier.",
     imageURL: profileImage3,
-    name: "Kyle Jonas",
-    position: "CEO at Space X Tech",
+    name: "Edozie Nneke",
+    position: "Frontend Developer",
+  },
+    {
+    text: "Although, I have not worked with Ikeoluwa for long, he is diligent in his tasks, prioritizes understanding the project architecture, and grasps new concepts very quickly.",
+    imageURL: profileImage1,
+    name: "Olamide Oguntan",
+    position: "Product Manager",
   },
 ];
 
@@ -52,12 +52,12 @@ export default function Reviews() {
   }, [currentSlide]);
 
   return (
-    <main className="block pt-[120px] h-auto overflow-hidden pb-12 max-md:pt-[60px]" id="reviews">
-      <h1 className="text-white font-medium font-[Roboto Serif] mb-[70px] max-md:mb-[50px] mx-auto text-center text-3xl">
+    <main className="block pt-[80px] h-auto overflow-hidden pb-12 max-md:pt-[60px]" id="reviews">
+      <h1 className="text-white font-medium font-[Roboto Serif] mb-[50px] max-md:mb-[50px] mx-auto text-center text-3xl">
         Reviews
       </h1>
       <div className="relative w-full flex flex-col items-center">
-        <div className="w-[80%] h-[40vh] max-md:h-[270px] relative flex justify-center items-center overflow-hidden">
+        <div className="w-[80%] h-[300px] max-md:h-[270px] relative flex justify-center items-center overflow-hidden">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={currentSlide}
