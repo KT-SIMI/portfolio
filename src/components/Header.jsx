@@ -1,36 +1,88 @@
-import HeaderImage from "../assets/image-header.png";
-import mobileHeaderImage from "../assets/image-mobile-header.png";
-import Navbar from "./Navbar";
+import { ChevronRight, Github, Linkedin, Mail } from "lucide-react";
 
-export default function Header() {
+export default function Header({ scrollY, scrollToSection }) {
   return (
-    <div
-      className="block bg-no-repeat bg-center bg-cover w-full max-w-[100vw] h-[100vh] p-0"
-      style={{
-        backgroundImage: `url(${HeaderImage})`,
-      }}
-      id="header"
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative px-6 pt-20"
     >
-      <Navbar />
-      <div className="block mt-[20%] max-md:mt-[63%] w-full max-md:text-center">
-        <div className="w-[55%] max-md:w-full px-[5%] py-[2%] text-white">
-          <h3 className="font-medium font-[Monserrat] text-[21px] max-md:text-[18px]">
-            Build with Ikeoluwa Oyewole
-          </h3>
-          <h1 className="text-[40px] font-[Roboto Serif] font-bold text-white mb-4 max-md:text-[32px]">
-            Software Engineer
-          </h1>
-          <p className="font-normal font-[Monserrat] text-[15px] mb-[35px] w-[85%] opacity-60 max-md:w-full max-md:px-[4%] max-md:opacity-75">
-            Hi, I am Ikeoluwa Oyewole, a software engineer who transforms complex business challenges into elegant digital solutions. Over the past 2 years, I've helped startups and established companies increase their operational efficiency through custom web applications and automated systems.
-          </p>
-          <a
-            href="#projects"
-            className="border border-white rounded-[30px] w-full h-7 text-white no-underline px-16 py-4 hover:border-cyan-950 hover:text-[#ccc]"
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="space-y-6">
+          <div className="overflow-hidden">
+            <h1
+              className="text-6xl md:text-8xl font-bold mb-4"
+              style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+            >
+              <span className="inline-block hover:text-blue-400 transition-colors duration-300 cursor-default">
+                I
+              </span>
+              <span className="inline-block hover:text-purple-400 transition-colors duration-300 cursor-default">
+                k
+              </span>
+              <span className="inline-block hover:text-pink-400 transition-colors duration-300 cursor-default">
+                e
+              </span>
+              <span className="inline-block hover:text-cyan-400 transition-colors duration-300 cursor-default">
+                o
+              </span>
+              <span className="inline-block hover:text-green-400 transition-colors duration-300 cursor-default">
+                l
+              </span>
+              <span className="inline-block hover:text-yellow-400 transition-colors duration-300 cursor-default">
+                u
+              </span>
+              <span className="inline-block hover:text-orange-400 transition-colors duration-300 cursor-default">
+                w
+              </span>
+              <span className="inline-block hover:text-red-400 transition-colors duration-300 cursor-default">
+                a
+              </span>
+            </h1>
+          </div>
+          <div className="space-y-2">
+            <p className="text-2xl md:text-4xl text-gray-400 font-light">
+              Full-Stack Developer
+            </p>
+            <p className="text-xl md:text-2xl text-gray-500">
+              Building digital experiences that don't suck
+            </p>
+          </div>
+          <div className="flex space-x-4 pt-6">
+            <a
+              href="#"
+              className="p-3 bg-gray-800 hover:bg-blue-500 rounded-lg transition-all duration-300 hover:scale-110"
+            >
+              <Github size={24} />
+            </a>
+            <a
+              href="#"
+              className="p-3 bg-gray-800 hover:bg-blue-500 rounded-lg transition-all duration-300 hover:scale-110"
+            >
+              <Linkedin size={24} />
+            </a>
+            <a
+              href="#"
+              className="p-3 bg-gray-800 hover:bg-blue-500 rounded-lg transition-all duration-300 hover:scale-110"
+            >
+              <Mail size={24} />
+            </a>
+          </div>
+          <button
+            onClick={() => scrollToSection("projects")}
+            className="mt-8 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105 flex items-center space-x-2"
           >
-            Go to Projects →
-          </a>
+            <span>View My Work</span>
+            <ChevronRight size={20} />
+          </button>
         </div>
       </div>
-    </div>
+
+      {/* scroll */}
+      <div className="absolute bottom-10 left-1/2 transform -transalate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-blue-500 rounded-full mt-2"></div>
+        </div>
+      </div>
+    </section>
   );
 }
